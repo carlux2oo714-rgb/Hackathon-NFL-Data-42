@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tema oscuro: controles nativos (select, casillas, barras de desplazamiento) en oscuro. */
+:root {
+  color-scheme: dark;
+  background-color: #0a0a0a;
+}
+
+/* Barra de rango doble: los inputs no capturan clics, solo sus controles. */
+.rango-doble {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  pointer-events: none;
+  margin: 0;
+}
+.rango-doble::-webkit-slider-runnable-track {
+  background: transparent;
+}
+.rango-doble::-moz-range-track {
+  background: transparent;
+}
+.rango-doble::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  height: 18px;
+  width: 18px;
+  border-radius: 9999px;
+  background: #171717;
+  border: 2px solid #e34234;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.6);
+  cursor: grab;
+}
+.rango-doble::-moz-range-thumb {
+  pointer-events: auto;
+  height: 14px;
+  width: 14px;
+  border-radius: 9999px;
+  background: #171717;
+  border: 2px solid #e34234;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.6);
+  cursor: grab;
+}
+.rango-doble:active::-webkit-slider-thumb {
+  cursor: grabbing;
+}
+.rango-doble:disabled::-webkit-slider-thumb {
+  border-color: #525252;
+  cursor: not-allowed;
+}
+.rango-doble:disabled::-moz-range-thumb {
+  border-color: #525252;
+  cursor: not-allowed;
+}
+.rango-doble:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #ec7259;
+  outline-offset: 2px;
+}
+.rango-doble:focus-visible::-moz-range-thumb {
+  outline: 2px solid #ec7259;
+  outline-offset: 2px;
+}
